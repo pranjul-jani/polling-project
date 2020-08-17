@@ -3,14 +3,19 @@
 <div class="container">
 <h1 class="question">{{ question.question_text }}</h1>
 
-<ul>
-<div class="choice">
+     {% if question.choice_set.count == 0 %}
+        <p>You cannot view the result for this question since it has no choices linked to it</p>
+        {% else %}
     {% for choice in question.choice_set.all %}
+        <ul>
+        <div class="choice">
         <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-    {% endfor %}
-</div>
+        </div>
 </ul>
+    {% endfor %}
+
 <br>
-    <div style="text-align: center;"><a href="{% url 'polls:detail' question.id %}"><button class="btn btn-primary vote-again">Vote again?</button></a>
+         <div style="text-align: center;"><a href="{% url 'polls:detail' question.id %}"><button class="btn btn-primary vote-again">Vote again?</button></a></div>
+    {% endif %}
 </div>
 {% endblock %}
