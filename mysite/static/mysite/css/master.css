@@ -1,0 +1,21 @@
+li a {
+    ;
+}
+
+.heading {
+    height: 120px;
+    padding-top: 40px;
+}
+
+.choice {
+    font-size: 20px;
+}
+
+.question {
+    height: 240px;
+    padding-top: 40px;
+    font-size: 60px;
+}
+.vote-again {
+    size: 120px;
+}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}s
+{% block content %}
+{% if latest_question_list %}
+    <div class="container">
+    <h1 class="heading">Current Available polls are :-</h1>
+    <ul>
+    {% for q in latest_question_list %}
+
+      <!-- here we have hard coded the url unlike the bottom li
+        <li><a href="/polls/{{q.id}}/" target="_blank">{{ q.question_text }}</a> </li>
+
+        app_name:path_name is the convention for calling url from html templates
+      -->
+
+        <li><a href="{% url 'polls:detail' q.id %}" target="_blank"> {{q.question_text }}</a> </li>
+        <br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available at the moment</p>
+{% endif %}
+</div>
+{% endblock %}

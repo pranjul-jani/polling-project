@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+    <h1 class="question">Welcome to Poll Adda</h1>
+    <h2>A project curated for survey enthusiasts who like to work from home</h2>
+        <a href="{% url 'polls:index' %}"><h2>Get Started</h2></a>
+    </div>
+{% endblock content %}

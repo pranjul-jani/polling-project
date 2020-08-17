@@ -1,0 +1,45 @@
+Introduction to automated testing
+
+Testing operations can be at different levels :-
+    Some tests might apply to a tiny detail (does a particular model method returns values as expected)
+
+    while others examine the overall operation of the software
+    ( does the sequence of user inputs on the site produce the desired results)
+
+
+In Automated testing the test work is done for you by the system,
+we create a set id tests once and then as you make changes to your app,
+You can check that your code still works as you originally intended without having to perform time consuming manual testing
+
+
+Some Programmers follow a discipline called as 'test-driven-development'
+they actually write their tests before they write their code
+
+This may seem counter-intuitive, but in fact it's similar to what most
+people will often do anyway, they descrbe a problem, then create some code to solve it
+TDD simply formalizes the problem in a python test case
+
+
+When you have written thousands of lines of code it is not easy what to test
+In such case, it is fruitful to write your first test the next time you make a change
+either when you add a new feature or fix a bug
+
+Most times we first write the test cases then figure out which code to fix
+but in TDD it doesn't matter in which order we do the work it can be reverse also
+
+In our first test, we focused closely on the internal behavior of the code. For this test,
+we want to check its behavior as it would be experienced by a user through a web browser.
+Before we try to fix anything, let’s have a look at the tools at our disposal.
+
+Django provides a test Client to simulate a user interacting with the code at the view level.
+We can use it in tests.py or even in the shell.
+
+We will start again with the shell, where we need to do a couple of things that won’t be necessary in tests.py.
+The first is to set up the test environment in the shell:
+
+$ python manage.py shell
+>>> from django.test.utils import setup_test_environment
+>>> setup_test_environment()
+
+
+python manage.py test polls
