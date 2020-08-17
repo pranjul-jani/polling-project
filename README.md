@@ -1,2 +1,2 @@
 # polling-project
- A simple polling project made by using django docs
+ This project is a basic project made with the help of django documetation it helps you getting started with django and learn its basic concepts
