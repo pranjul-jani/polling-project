@@ -11,9 +11,10 @@
 
         app_name:path_name is the convention for calling url from html templates
       -->
-
+        {% if q.choice_set.count > 0 %}
         <li><a href="{% url 'polls:detail' q.id %}" target="_blank"> {{q.question_text }}</a> </li>
         <br>
+        {% endif %}
     {% endfor %}
     </ul>
 {% else %}
